@@ -73,7 +73,10 @@ gradlePlugin {
             id = libs.plugins.nowinandroid.jvm.library.get().pluginId
             implementationClass = "JvmLibraryConventionPlugin"
         }
-
+        register("androidFeature") {
+            id = libs.plugins.nowinandroid.android.feature.get().pluginId
+            implementationClass = "AndroidFeatureConventionPlugin"
+        }
         register("hilt") {
             id = libs.plugins.nowinandroid.hilt.get().pluginId
             implementationClass = "HiltConventionPlugin"
