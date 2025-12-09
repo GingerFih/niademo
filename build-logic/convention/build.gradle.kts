@@ -34,7 +34,7 @@ dependencies {
     compileOnly(libs.firebase.performance.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.ksp.gradlePlugin)
-    compileOnly(libs.room.gradlePlugin)
+    implementation(libs.room.gradlePlugin)
     implementation(libs.truth)
     lintChecks(libs.androidx.lint.gradle)
 }
@@ -53,6 +53,18 @@ gradlePlugin {
             id = libs.plugins.nowinandroid.android.application.jacoco.get().pluginId
             implementationClass = "AndroidApplicationJacocoConventionPlugin"
         }
+        register("androidLibraryCompose") {
+            id = libs.plugins.nowinandroid.android.library.compose.get().pluginId
+            implementationClass = "AndroidLibraryComposeConventionPlugin"
+        }
+        register("androidLibraryJacoco") {
+            id = libs.plugins.nowinandroid.android.library.jacoco.get().pluginId
+            implementationClass = "AndroidLibraryJacocoConventionPlugin"
+        }
+        register("androidLibrary") {
+            id = libs.plugins.nowinandroid.android.library.asProvider().get().pluginId
+            implementationClass = "AndroidLibraryConventionPlugin"
+        }
         register("androidLint") {
             id = libs.plugins.nowinandroid.android.lint.get().pluginId
             implementationClass = "AndroidLintConventionPlugin"
@@ -65,6 +77,11 @@ gradlePlugin {
         register("hilt") {
             id = libs.plugins.nowinandroid.hilt.get().pluginId
             implementationClass = "HiltConventionPlugin"
+        }
+
+        register("androidRoom") {
+            id = libs.plugins.nowinandroid.android.room.get().pluginId
+            implementationClass = "AndroidRoomConventionPlugin"
         }
     }
 }

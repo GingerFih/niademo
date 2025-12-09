@@ -1,12 +1,12 @@
 [versions]
 agp = "8.8.0"
 kotlin = "2.2.21"
-coreKtx = "1.17.0"
+coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.3.0"
 espressoCore = "3.7.0"
 lifecycleRuntimeKtx = "2.10.0"
-activityCompose = "1.12.1"
+activityCompose = "1.9.3"
 composeBom = "2025.08.01"
 androidTools = "31.13.1"
 firebaseCrashlyticsPlugin = "3.0.6"
@@ -27,6 +27,29 @@ androidxMacroBenchmark = "1.4.1"
 roborazzi = "1.51.0"
 dependencyGuard = "0.5.0"
 hilt = "2.57.2"
+coil = "2.7.0"
+uiDesktop = "1.7.0"
+metricsPerformance = "1.0.0"
+androidxProfileinstaller = "1.4.1"
+appcompat = "1.7.1"
+material = "1.13.0"
+hiltExt = "1.2.0"
+androidxTestRunner = "1.7.0-rc01"
+androidxTracing = "1.3.0-alpha02"
+androidxWork = "2.10.0"
+firebaseBom = "33.7.0"
+jacoco = "0.8.12"
+androidDesugarJdkLibs = "2.0.4"
+kotlinxDatetime = "0.6.1"
+androidxTestCore = "1.7.0-rc01"
+kotlinxSerializationJson = "1.8.0"
+retrofit = "2.11.0"
+androidxDataStore = "1.1.1"
+protobuf = "4.29.2"
+protobufPlugin = "0.9.5"
+performance = "1.0.0"
+coreSplashscreen = "1.2.0"
+okhttp = "4.12.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -54,10 +77,16 @@ turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine
 
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 
+# Android desugaring JDK libs for coreLibraryDesugaring
+android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" }
+
 # Hilt libraries used by convention plugin
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 hilt-core = { group = "com.google.dagger", name = "hilt-core", version.ref = "hilt" }
+coil-kt = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
+coil-kt-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+coil-kt-svg = { group = "io.coil-kt", name = "coil-svg", version.ref = "coil" }
 
 # Dependencies of the included build-logic
 android-gradleApiPlugin = { group = "com.android.tools.build", name = "gradle-api", version.ref = "agp" }
@@ -71,6 +100,42 @@ room-gradlePlugin = { group = "androidx.room", name = "room-gradle-plugin", vers
 
 roborazzi = { group = "io.github.takahirom.roborazzi", name = "roborazzi", version.ref = "roborazzi" }
 roborazzi-accessibility-check = { group = "io.github.takahirom.roborazzi", name = "roborazzi-accessibility-check", version.ref = "roborazzi" }
+androidx-ui-desktop = { group = "androidx.compose.ui", name = "ui-desktop", version.ref = "uiDesktop" }
+androidx-metrics-performance = { group = "androidx.metrics", name = "metrics-performance", version.ref = "metricsPerformance" }
+androidx-profileinstaller = { group = "androidx.profileinstaller", name = "profileinstaller", version.ref = "androidxProfileinstaller" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+hilt-ext-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "hiltExt" }
+hilt-ext-work = { group = "androidx.hilt", name = "hilt-work", version.ref = "hiltExt" }
+androidx-tracing-ktx = { group = "androidx.tracing", name = "tracing-ktx", version.ref = "androidxTracing" }
+androidx-work-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "androidxWork" }
+androidx-work-testing = { group = "androidx.work", name = "work-testing", version.ref = "androidxWork" }
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
+firebase-cloud-messaging = { group = "com.google.firebase", name = "firebase-messaging" }
+hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
+kotlinx-coroutines-guava = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-guava", version.ref = "kotlinxCoroutines" }
+androidx-compose-runtime = { group = "androidx.compose.runtime", name = "runtime" }
+firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+
+kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinxDatetime" }
+androidx-test-core = { group = "androidx.test", name = "core", version.ref = "androidxTestCore" }
+androidx-test-runner = { group = "androidx.test", name = "runner", version.ref = "androidxTestRunner" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+
+retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-kotlin-serialization = { group = "com.squareup.retrofit2", name = "converter-kotlinx-serialization", version.ref = "retrofit" }
+
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+androidx-dataStore = { group = "androidx.datastore", name = "datastore", version.ref = "androidxDataStore" }
+protobuf-protoc = { group = "com.google.protobuf", name = "protoc", version.ref = "protobuf" }
+protobuf-kotlin-lite = { group = "com.google.protobuf", name = "protobuf-kotlin-lite", version.ref = "protobuf" }
+androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "coreSplashscreen" }
+okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
@@ -96,9 +161,14 @@ nowinandroid-android-application-compose = { id = "nowinandroid.android.applicat
 nowinandroid-android-application-firebase = { id = "nowinandroid.android.application.firebase" }
 nowinandroid-android-application-flavors = { id = "nowinandroid.android.application.flavors" }
 nowinandroid-android-application-jacoco = { id = "nowinandroid.android.application.jacoco" }
-
+nowinandroid-android-feature = { id = "nowinandroid.android.feature" }
+nowinandroid-android-library = { id = "nowinandroid.android.library" }
 nowinandroid-android-library-compose = { id = "nowinandroid.android.library.compose" }
 nowinandroid-android-library-jacoco = { id = "nowinandroid.android.library.jacoco" }
 nowinandroid-jvm-library = { id = "nowinandroid.jvm.library" }
 nowinandroid-android-lint = { id = "nowinandroid.android.lint" }
+nowinandroid-android-room = { id = "nowinandroid.android.room" }
+nowinandroid-android-test = { id = "nowinandroid.android.test" }
 nowinandroid-hilt = { id = "nowinandroid.hilt" }
+android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+protobuf = { id = "com.google.protobuf", version.ref = "protobufPlugin" }
